@@ -15,7 +15,7 @@ export default {
 
   async getNextPhoto() {
     const friend = this.getRandomElement(this.friends.items);
-    const photos = await this.getFriendPhotos[friend.id];
+    const photos = await this.getFriendPhotos(friend.id);
     const photo = this.getRandomElement(photos.items);
     const size = this.findSize(photo);
 
@@ -46,7 +46,7 @@ export default {
   login() {
     return new Promise((resolve, reject) => {
       VK.init({
-        appId: APP_ID,
+        apiId: APP_ID,
       });
 
       VK.Auth.login((response) => {
@@ -69,7 +69,7 @@ export default {
   },
 
   callAPi(method, params) {
-    params.v = params.v || '5.120';
+    params.v = params.v || '5.131';
 
     return new Promise((resolve, reject) => {
       VK.api(method, params, (response) => {

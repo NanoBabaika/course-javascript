@@ -1,6 +1,6 @@
 import model from './model';
 import pages from './pages';
-import mainPage from './loginPage';
+import mainPage from './mainPage';
 
 export default {
   handleEvents() {
