@@ -61,11 +61,11 @@ export default {
   },
 
   logout() {
-    const logoutBtn = document.querySelector('.logoutBtn');
-    logoutBtn.addEventListener('click', function () {
-      auth.logout();
-    });
-    VKSdk.forceLogout();
+    // const logoutBtn = document.querySelector('.logoutBtn');
+    // logoutBtn.addEventListener('click', function () {
+    //   auth.logout();
+    // });
+    // VKSdk.forceLogout();
   },
 
   callAPi(method, params) {
