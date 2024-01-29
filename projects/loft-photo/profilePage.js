@@ -11,7 +11,7 @@ export default {
 
     this.user = user;
 
-    photoComp.computedStyleMap.backgroundImage = `url('${user.photo_100}')`;
+    photoComp.style.backgroundImage = `url('${user.photo_100}')`;
     nameComp.innerText = `${user.first_name ?? ''} ${user.last_name ?? ''}`;
     photosComp.innerHTML = '';
 
@@ -19,9 +19,9 @@ export default {
       const size = model.findSize(photo);
       const element = document.createElement('div');
 
-      element.classList.add('component-user-info-photo');
+      element.classList.add('component-user-photo');
       element.dataset.id = photo.id;
-      element.style.backgroundImage = `url${size.url}`;
+      element.style.backgroundImage = `url(${size.url})`;
       photosComp.append(element);
     }
   },
