@@ -67,20 +67,20 @@ export default {
       document
       .querySelector('.component-footer-container-social-comments')
       .addEventListener('click', async () => {
-        document.querySelector('.component-components').classList.remove('hidden');
+        document.querySelector('.component-comments').classList.remove('hidden');
         await this.loadComments(this.photoId);
       });
 
-      const input = document.querySelector('.component-components-container-form-input');
+      const input = document.querySelector('.component-comments-container-form-input');
 
-      document.querySelector('.component-components').addEventListener('click', (e) => {
+      document.querySelector('.component-comments').addEventListener('click', (e) => {
         if(e.target === e.currentTarget) {
-          document.querySelector('.component-components').classList.add('hidden');
+          document.querySelector('.component-comments').classList.add('hidden');
         }
       });
 
       document
-        .querySelector('.component-components-container-form-send')
+        .querySelector('.component-comments-container-form-send')
         .addEventListener('click', async () => {
           if(input.value.trim().length) {
             await model.postComment(this.photoId, input.value.trim());
@@ -103,8 +103,8 @@ export default {
       }),
     }) ;
     
-    document.querySelector('.component-components-container-list').innerHTML = '';
-    document.querySelector('.component-components-container-list').append(commentsElements);
+    document.querySelector('.component-comments-container-list').innerHTML = '';
+    document.querySelector('.component-comments-container-list').append(commentsElements);
     this.setComments(comments.length);
   },
 
