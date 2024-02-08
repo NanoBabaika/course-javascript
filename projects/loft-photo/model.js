@@ -80,10 +80,14 @@ export default {
     });
   },
 
-  getFriends() {
+  getFriends(id) {
     const params = {
       fields: ['photo_50', 'photo_100'],
     };
+
+    if(id != null) {
+      params.user_id = id;
+    }
 
     return this.callAPi('friends.get', params);
   },
@@ -144,8 +148,8 @@ export default {
         params.method = 'POST';
         params.body = JSON.stringify(body);
       }
-      // адрес отправки запроса корректный?
-      const response = await fetch (`/loft-photo-lite-5/api/?${query}`, params);
+
+      const response = await fetch (`/loft-photo/api/?${query}`, params);
 
       return response.json();
   },

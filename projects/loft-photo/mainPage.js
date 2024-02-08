@@ -1,7 +1,7 @@
 import model from './model';
 import profilePage from './profilePage';
 import pages from './pages';
-// import commentsTemplate from './commentsTemplata.html/hbs'
+import commentsTemplate from './commentsTemplate.html.hbs'
 
 export default {
   async getNextPhoto() {
@@ -71,6 +71,8 @@ export default {
         await this.loadComments(this.photoId);
       });
 
+
+
       const input = document.querySelector('.component-comments-container-form-input');
 
       document.querySelector('.component-comments').addEventListener('click', (e) => {
@@ -108,6 +110,7 @@ export default {
     this.setComments(comments.length);
   },
 
+  // Не работают эти методы
   setLikes(total, liked) {
     const likesElement = document.querySelector(
       '.component-footer-container-social-likes'
