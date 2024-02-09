@@ -26,6 +26,7 @@ const methods = {
     photoLikes.set(vkUser.id, true);
     return {likes: photoLikes.size, liked: true};
   },
+  
   photoStats(req, res, url, vkUser) {
     const photoId = url.searchParams.get('photo');
     const photoLikes = DB.likes.get(photoId);
@@ -37,6 +38,7 @@ const methods = {
       comments: photoComments?.length ?? 0,
     };
   },
+
   postComment(req, res, url, vkUser, body) {
     const photoId = url.searchParams.get('photo');
     let photoComments = DB.comments.get(photoId);
@@ -48,6 +50,7 @@ const methods = {
 
     photoComments.unshift({user: vkUser, text: body.text});
   },
+
   getComments(req, res, url) {
     const photoId = url.searchParams.get('photo');
     return DB.comments.get(photoId) ?? [];

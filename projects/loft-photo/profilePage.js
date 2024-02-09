@@ -6,8 +6,8 @@ export default {
   async setUser(user) {
     const photoComp = document.querySelector('.component-user-info-photo');
     const nameComp = document.querySelector('.component-user-info-name');
-    const photosComp = document.querySelector('.component-user-photos');
-    const photos = await model.getPhotos(user.id);
+    // const photosComp = document.querySelector('.component-user-photos');
+    // const photos = await model.getPhotos(user.id);
     const photosTab = document.querySelector('.component-profile-mode-photos');
     const friendsTab = document.querySelector('.component-profile-mode-friends');
 
