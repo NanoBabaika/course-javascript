@@ -18,7 +18,7 @@ export default {
 
     this.friend = friend;
     this.photoId = id;
-
+  
     headerPhotosComp.style.backgroundImage = `url('${friend.photo_50}')`;
     headerNameComp.innerText = `${friend.first_name ?? ''} ${friend.last_name ?? ''}`;
     photoComp.style.backgroundImage = `url(${url})`;
@@ -112,6 +112,7 @@ export default {
 
   // Не работают эти методы
   setLikes(total, liked) {
+    console.log('null');
     const likesElement = document.querySelector(
       '.component-footer-container-social-likes'
     );
@@ -126,6 +127,8 @@ export default {
   },
 
   setComments(total) {
+    console.log('null');
+
     const likesElement = document.querySelector(
       '.component-footer-container-social-comments'
     );
