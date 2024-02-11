@@ -134,7 +134,7 @@ export default {
 
     const query = Object.entries(queryParams)
       .reduce((all, [name, value])  => {
-        all.push(`${name} = ${encodeURIComponent(value)}`);
+        all.push(`${name}=${encodeURIComponent(value)}`);
         return all;
       }, [])
       .join('&');

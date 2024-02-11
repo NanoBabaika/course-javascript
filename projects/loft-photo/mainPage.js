@@ -3,12 +3,16 @@ import profilePage from './profilePage';
 import pages from './pages';
 import commentsTemplate from './commentsTemplate.html.hbs'
 
+
+ 
 export default {
+  
+
   async getNextPhoto() {
     const { friend, id, url } = await model.getNextPhoto();
     const photoStats = await model.photoStats(id);
-    stats = photoStats;
     this.setFriendAndPhoto(friend, id, url, photoStats);
+ 
   },
 
   setFriendAndPhoto(friend, id, url, stats) {
@@ -16,11 +20,11 @@ export default {
     const headerPhotosComp = document.querySelector('.component-header-photo');
     const headerNameComp = document.querySelector('.component-header-name');
     const footerPhotoComp = document.querySelector('.component-footer-photo');
-
+     
     this.friend = friend;
     this.photoId = id;
-    
 
+ 
     headerPhotosComp.style.backgroundImage = `url('${friend.photo_50}')`;
     headerNameComp.innerText = `${friend.first_name ?? ''} ${friend.last_name ?? ''}`;
     photoComp.style.backgroundImage = `url(${url})`;
@@ -112,7 +116,7 @@ export default {
     this.setComments(comments.length);
   },
 
-  // Не работают эти методы
+ 
   setLikes(total, liked) {
     const likesElement = document.querySelector(
       '.component-footer-container-social-likes'
@@ -135,3 +139,5 @@ export default {
     likesElement.innerText = total;
   },
 };
+
+
