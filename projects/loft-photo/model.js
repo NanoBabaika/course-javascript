@@ -128,7 +128,7 @@ export default {
 
   async callServer (method, queryParams, body) {
     queryParams = {
-      queryParams,
+      ...queryParams,
       method,
     };
 
